@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container-sm">
+      <div class="app">
+        <div>
+          <form class="row" id="search-form">
+            <div class="col">
+              <input
+                type="text"
+                id="city-input"
+                class="form-control"
+                placeholder="Enter a city"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-secondary">Search</button>
+              <button class="btn current-location" id="current-location">
+                Current Location
+              </button>
+            </div>
+          </form>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-6">
+            <img
+              src="images/cloudy.JPG"
+              class="weather-icon float-left"
+              alt="cloud"
+            />
+            <div class="weather-temp">
+              <span class="temperature" id="temperature">20</span>
+              <span class="units"
+                ><a href="#" id="celsius-link">℃</a> |
+                <a href="#" id="fahrenheit-link">℉</a>
+              </span>
+            </div>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li>Humidity: <span id="humidity">15</span>%</li>
+              <li>Wind: <span id="wind">16</span>km/hr</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h1 id="city">Winnipeg</h1>
+            <hr />
+            <div class="current-date-time">
+              <span class="current-date" id="current-date">Fri</span>
+              <span class="current-time" id="current-time">20:36</span>
+            </div>
+            <div class="weather-description" id="weather-description">
+              Cloudy
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="forecast-layout">
+              <div class="forecast-day">Sat</div>
+              <div class="forecast-temperature">19℃</div>
+              <div class="forecast-icon">
+                <img
+                  src="images/raining.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="rain"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="forecast-layout">
+              <div class="forecast-day">Sun</div>
+              <div class="forecast-temperature">18℃</div>
+              <div class="forecast-icon">
+                <img
+                  src="images/cloudy.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="cloud"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="forecast-layout">
+              <div class="forecast-day">Mon</div>
+              <div class="forecast-temperature">19℃</div>
+              <div class="forecast-icon">
+                <img
+                  src="images/raining.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="rain"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="forecast-layout">
+              <div class="forecast-day">Tue</div>
+              <div class="forecast-temperature">19℃</div>
+              <div class="forecast-icon">
+                <img
+                  src="images/sunny.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="sun"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="forecast-layout">
+              <div class="forecast-day">Wed</div>
+              <div class="forecast-temperature">24℃</div>
+              <div class="forecast-icon">
+                <img
+                  src="images/partly sunny.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="cloud and sun"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

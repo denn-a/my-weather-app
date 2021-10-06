@@ -1,0 +1,111 @@
+body {
+  color: #bf89d3;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+}
+
+.current-location {
+  background: #bf89d3;
+  color: #fff;
+}
+
+.current-location:hover {
+  color: #fff;
+  background: #b480c7;
+}
+
+.weather-icon {
+  width: 235px;
+  position: relative;
+  bottom: 44px;
+}
+
+.weather-temp {
+  display: inline;
+}
+
+.temperature {
+  display: inline;
+  font-weight: 400;
+  font-size: 165px;
+}
+
+.units {
+  font-size: 40px;
+  font-weight: 200;
+  position: relative;
+  bottom: 91px;
+}
+
+a {
+  color: #bf89d3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 35px;
+  list-style: none;
+}
+
+li {
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 65px;
+}
+
+hr {
+  margin: 10px 0px;
+}
+
+.current-date-time {
+  font-size: 24px;
+}
+
+.weather-description {
+  font-size: 24px;
+}
+
+.forecast-day {
+  text-align: left;
+  font-size: 20px;
+  color: gray;
+}
+
+.forecast-temperature {
+  font-size: 20px;
+  color: gray;
+  position: relative;
+  text-align: right;
+  bottom: 31px;
+}
+
+.forecast-icon img {
+  width: 60%;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 12px;
+}
+
+.forecast-layout {
+  padding: 10px;
+  border: 4px solid rgb(128, 128, 128, 0.2);
+  border-radius: 4px;
+}
+
+.app {
+  padding: 10px;
+  border: 4px solid rgb(128, 128, 128, 0.2);
+  border-radius: 4px;
+}

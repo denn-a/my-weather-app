@@ -37,12 +37,12 @@ body {
   bottom: 91px;
 }
 
-a {
+.unit-link {
   color: #bf89d3;
   text-decoration: none;
 }
 
-a:hover {
+.unit-link:hover {
   text-decoration: underline;
   color: gray;
 }

@@ -109,3 +109,17 @@ hr {
   border: 4px solid rgb(128, 128, 128, 0.2);
   border-radius: 4px;
 }
+
+.open-source-code {
+  color: #bf89d3;
+  text-decoration: none;
+}
+
+.open-source-code:hover {
+  color: #b480c7;
+  text-decoration: underline;
+}
+
+.coder-name {
+  color: gray;
+}

@@ -1,24 +1,22 @@
-// current Time
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
 
-function currentDayTime() {
-  let now = new Date();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let currentDay = days[now.getDay()];
+  let day = days[date.getDay()];
 
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-
-  let day = document.querySelector("#current-date");
-  day.innerHTML = currentDay;
-
-  let time = document.querySelector("#current-time");
-  time.innerHTML = `${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
-currentDayTime();
-
-// Task 1
+console.log(formatDate);
 
 function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -31,7 +29,7 @@ function displayWeatherCondition(response) {
 
   document.querySelector("#city").innerHTML = response.data.name;
 
-  document.querySelector("#weather-description").innerHTML =
+  document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 }
 
@@ -50,7 +48,6 @@ function retrieveLocation(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", retrieveLocation);
 
-// Geolocation
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;

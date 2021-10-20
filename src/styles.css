@@ -28,6 +28,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: #b480c7;
 }
 
 .current-location {

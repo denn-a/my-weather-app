@@ -17,6 +17,20 @@ li {
   font-size: 18px;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
+a {
+  color: #bf89d3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b480c7;
+  text-decoration: underline;
+}
+
 .current-location {
   background: #bf89d3;
   color: #fff;
@@ -43,28 +57,29 @@ li {
   font-size: 165px;
 }
 
-.units {
+.weather-temp .units {
   font-size: 40px;
   font-weight: 200;
   position: relative;
   bottom: 91px;
 }
 
-.unit-link {
-  color: #bf89d3;
+.weather-temp .active {
+  color: gray;
+  cursor: default;
+}
+
+.weather-temp .active:hover {
   text-decoration: none;
 }
 
-.unit-link:hover {
-  text-decoration: underline;
-  color: gray;
-}
-
 .humidity-wind {
+  font-size: 16px;
   padding: 0;
   margin: 0;
   position: relative;
   top: 57px;
+  left: -15px;
   list-style: none;
 }
 
@@ -114,16 +129,6 @@ li {
   padding: 10px;
   border: 4px solid rgb(128, 128, 128, 0.2);
   border-radius: 4px;
-}
-
-.open-source-code {
-  color: #bf89d3;
-  text-decoration: none;
-}
-
-.open-source-code:hover {
-  color: #b480c7;
-  text-decoration: underline;
 }
 
 .coder-name {

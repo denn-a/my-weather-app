@@ -16,47 +16,52 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-console.log(formatDate);
+function weatherIcon(event) {
+  document.getElementById("#icon").src = images / sunny.JPG;
+}
 
-function displayWeatherCondition(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+function displayTemperature(response) {
+  let iconElement = document.querySelector("#icon");
+  let temperatureElement = document.querySelector("#temperature");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let cityElement = document.querySelector("#city");
+  let dateElement = document.querySelector("#date");
+  let descriptionElement = document.querySelector("#description");
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
+  cityElement.innerHTML = response.data.name;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
-
-  document.querySelector("#city").innerHTML = response.data.name;
-
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function retrieveLocation(event) {
-  event.preventDefault();
-
-  let city = document.querySelector("#city-input").value;
-
+function search(city) {
   let apiKey = "b2d9fa1f2b35557e4615dd5fab218834";
-  let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather`;
-  let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  axios.get(`${apiUrl}`).then(displayWeatherCondition);
+  axios.get(`${apiUrl}`).then(displayTemperature);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", retrieveLocation);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let units = "metric";
   let apiKey = "b2d9fa1f2b35557e4615dd5fab218834";
-  let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather`;
-  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-  axios.get(`${apiUrl}`).then(displayWeatherCondition);
+  axios.get(`${apiUrl}`).then(displayTemperature);
 }
 
 function getCurrentPosition(event) {
@@ -66,3 +71,8 @@ function getCurrentPosition(event) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Winnipeg");

@@ -22,13 +22,12 @@ li:first-letter {
 }
 
 a {
-  color: #bf89d3;
+  color: gray;
   text-decoration: none;
 }
 
 a:hover {
-  color: #b480c7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .current-location {
@@ -62,10 +61,15 @@ a:hover {
   font-weight: 200;
   position: relative;
   bottom: 91px;
+  color: gray;
+}
+
+.weather-temp .units:hover {
+  color: gray;
 }
 
 .weather-temp .active {
-  color: gray;
+  color: #bf89d3;
   cursor: default;
 }
 
@@ -129,6 +133,16 @@ a:hover {
   padding: 10px;
   border: 4px solid rgb(128, 128, 128, 0.2);
   border-radius: 4px;
+}
+
+.open-source-code {
+  color: #bf89d3;
+  text-decoration: none;
+}
+
+.open-source-code:hover {
+  color: #b480c7;
+  text-decoration: underline;
 }
 
 .coder-name {

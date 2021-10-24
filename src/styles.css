@@ -101,12 +101,14 @@ a:hover {
 
 .forecast-day {
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 500;
   color: gray;
 }
 
 .forecast-temperatures {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 500;
   color: gray;
   text-align: center;
 }

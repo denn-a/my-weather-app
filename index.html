@@ -26,75 +26,77 @@
   </head>
   <body>
     <div class="container-sm">
-      <div class="app">
-        <div>
-          <form class="row" id="search-form">
+      <div class="app-wrapper">
+        <div class="app">
+          <div>
+            <form class="row" id="search-form">
+              <div class="col">
+                <input
+                  type="text"
+                  id="city-input"
+                  class="form-control"
+                  placeholder="Enter a city"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-secondary">Search</button>
+                <button class="btn current-location" id="current-location">
+                  Current Location
+                </button>
+              </div>
+            </form>
+          </div>
+          <br />
+          <div class="row align-items-center">
             <div class="col">
-              <input
-                type="text"
-                id="city-input"
-                class="form-control"
-                placeholder="Enter a city"
-                autocomplete="off"
+              <img
+                src="images/cloudy.JPG"
+                class="weather-icon float-left"
+                id="icon"
+                alt="cloud"
               />
+              <div class="weather-temp">
+                <span class="temperature" id="temperature"></span>
+                <span class="units"
+                  ><a href="#" id="celsius-link" class="active">℃</a> |
+                  <a href="#" id="fahrenheit-link">℉</a>
+                </span>
+              </div>
             </div>
-            <div class="col">
-              <button type="submit" class="btn btn-secondary">Search</button>
-              <button class="btn current-location" id="current-location">
-                Current Location
-              </button>
+            <div class="col-2">
+              <ul class="humidity-wind">
+                <li class="humidity">Humidity: <span id="humidity"></span>%</li>
+                <li class="wind">Wind: <span id="wind"></span>km/hr</li>
+              </ul>
             </div>
-          </form>
-        </div>
-        <br />
-        <div class="row align-items-center">
-          <div class="col">
-            <img
-              src="images/cloudy.JPG"
-              class="weather-icon float-left"
-              id="icon"
-              alt="cloud"
-            />
-            <div class="weather-temp">
-              <span class="temperature" id="temperature"></span>
-              <span class="units"
-                ><a href="#" id="celsius-link" class="active">℃</a> |
-                <a href="#" id="fahrenheit-link">℉</a>
-              </span>
-            </div>
-          </div>
-          <div class="col-2">
-            <ul class="humidity-wind">
-              <li class="humidity">Humidity: <span id="humidity"></span>%</li>
-              <li class="wind">Wind: <span id="wind"></span>km/hr</li>
-            </ul>
-          </div>
 
-          <div class="col">
-            <h1 id="city"></h1>
-            <hr />
-            <ul class="date-description">
-              <li>
-                <span class="date" id="date"></span>
-              </li>
-              <li>
-                <span class="description" id="description"></span>
-              </li>
-            </ul>
+            <div class="col">
+              <h1 id="city"></h1>
+              <hr />
+              <ul class="date-description">
+                <li>
+                  <span class="date" id="date"></span>
+                </li>
+                <li>
+                  <span class="description" id="description"></span>
+                </li>
+              </ul>
+            </div>
           </div>
+          <br />
+          <div class="weather-forecast" id="forecast"></div>
         </div>
-        <br />
-        <div class="weather-forecast" id="forecast"></div>
-      </div>
-      <div>
-        <span>
-          <a
-            href="https://github.com/denn-a/my-weather-app"
-            target="_blank"
-            class="open-source-code"
-            >Open-source code</a
-          ></span
-        ><span class="coder-name"> by Denise A</span>
+        <div>
+          <span>
+            <a
+              href="https://github.com/denn-a/my-weather-app"
+              target="_blank"
+              class="open-source-code"
+              >Open-source code</a
+            ></span
+          ><span class="coder-name"> by Denise A</span>
+        </div>
       </div>
     </div>
     <script src="src/script.js"></script>
